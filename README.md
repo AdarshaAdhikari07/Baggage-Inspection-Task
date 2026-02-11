@@ -1,4 +1,4 @@
-# ✈️ SkyGuard: Human-AI Security Simulation
+# Baggage Inspection Task
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://skyguard-project-2025.streamlit.app/)
 ![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
