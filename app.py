@@ -116,7 +116,7 @@ def run_system_verification():
 # ==========================================
 # 5. UI LAYOUT
 # ==========================================
-st.title("🛡️ Baggage Inspection Task")
+st.title(" Baggage Inspection Task: Research Instrument")
 
 # --- MAIN MENU ---
 if not st.session_state.game_active and st.session_state.rounds == 0:
@@ -260,7 +260,7 @@ else:
         
         st.divider()
         csv = df.to_csv(index=False).encode('utf-8')
-        st.download_button("📥 Download Full Dataset (CSV)", csv, "skyguard_data.csv", "text/csv")
+        st.download_button("📥 Download Full Dataset (CSV)", csv, "BaggageInspection.csv", "text/csv")
     
     if st.button("🔄 Return to Main Menu"):
         restart_game()
