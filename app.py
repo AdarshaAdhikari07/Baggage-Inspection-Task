@@ -10,9 +10,6 @@ import seaborn as sns
 # ==========================================
 st.set_page_config(page_title="Baggage Inspection Task", page_icon="🛡️", layout="centered")
 
-# DEBUG MESSAGE (If you see this, the app is running)
-# st.write("✅ System Loaded Successfully") 
-
 # ==========================================
 # 2. SESSION STATE MANAGEMENT
 # ==========================================
@@ -224,13 +221,39 @@ elif st.session_state.game_active:
 
 else:
     # --- END SCREEN ---
-    st.success(f"Session Complete. Score: {st.session_state.score}")
+    st.success(f"Session Complete. Final Score: {st.session_state.score}")
     
-    # Add Data Download
+    # Convert session history to Pandas DataFrame
     if len(st.session_state.history) > 0:
         df = pd.DataFrame(st.session_state.history)
+        
+        st.divider()
+        st.subheader("📈 Performance Report")
+        
+        # --- TABBED GRAPHS ---
+        tab1, tab2 = st.tabs(["⏱️ Reaction Time", "🎯 Accuracy"])
+
+        with tab1:
+            st.markdown("**Average Time to Decide (Lower is faster)**")
+            fig1, ax1 = plt.subplots(figsize=(6, 3))
+            sns.barplot(data=df, x="Mode", y="Time", hue="Result", palette="viridis", ax=ax1)
+            st.pyplot(fig1)
+
+        with tab2:
+            st.markdown("**Decision Accuracy (%)**")
+            # Calculate accuracy percentage
+            acc_df = df.groupby("Mode")["Result"].apply(lambda x: (x == 'CORRECT').mean() * 100).reset_index()
+            
+            fig2, ax2 = plt.subplots(figsize=(6, 3))
+            sns.barplot(data=acc_df, x="Mode", y="Result", palette="magma", ax=ax2)
+            ax2.set_ylabel("Accuracy %")
+            ax2.set_ylim(0, 100)
+            st.pyplot(fig2)
+        
+        st.divider()
+        # --- DOWNLOAD BUTTON ---
         csv = df.to_csv(index=False).encode('utf-8')
-        st.download_button("📥 Download Data (CSV)", csv, "data.csv", "text/csv")
+        st.download_button("📥 Download Full Dataset (CSV)", csv, "skyguard_data.csv", "text/csv")
     
-    if st.button("Return to Menu"):
+    if st.button("🔄 Return to Main Menu"):
         restart_game()
