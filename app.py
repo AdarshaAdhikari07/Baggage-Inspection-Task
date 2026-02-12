@@ -113,25 +113,4 @@ def run_system_verification():
     progress_bar.progress(100)
     st.session_state.verification_result = pd.DataFrame(logs)
 
-# ==========================================
-# 5. UI LAYOUT
-# ==========================================
-st.title("🛡️ Baggage Inspection Task")
-
-# --- MAIN MENU ---
-if not st.session_state.game_active and st.session_state.rounds == 0:
-    
-    # === [ADDED] MISSION BRIEFING SECTION ===
-    st.markdown("### 📋 Mission Briefing")
-    st.markdown("**Role:** Security Screening Officer | **Objective:** Detect prohibited items.")
-    
-    st.markdown("#### ⚠️ TARGET THREATS (LOOK FOR THESE):")
-    # This creates the dark visual bar with emojis
-    threat_html = " ".join([f"<span style='font-size:40px; margin:0 10px;'>{x}</span>" for x in THREAT_ITEMS])
-    st.markdown(
-        f"<div style='background-color: #262730; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px;'>{threat_html}</div>", 
-        unsafe_allow_html=True
-    )
-    
-    st.info("⚡ **Performance Metric:** Both SPEED and ACCURACY are tracked.")
-    st.
+# =================================
