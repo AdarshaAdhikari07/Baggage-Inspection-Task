@@ -217,6 +217,45 @@ elif st.session_state.game_active:
             st.error(f"🤖 AI ALERT: Threat Detected (Confidence: {confidence}%)", icon="⚠️")
         else:
             st.success(f"🤖 AI SCAN: Bag Clear (Confidence: {confidence}%)", icon="✅")
+            # --- GAME LOOP ---
+elif st.session_state.game_active:
+    st.progress(st.session_state.rounds / 10, f"Bag {st.session_state.rounds+1}/10")
+    
+    # Bag Display
+    bag_html = " ".join([f"<span style='font-size:55px; padding:10px;'>{x}</span>" for x in st.session_state.current_bag])
+    st.markdown(f"<div style='background:#111; border:4px solid #444; border-radius:15px; padding:30px; text-align:center;'>{bag_html}</div>", unsafe_allow_html=True)
+
+    # --- AI LOGIC & STATUS DISPLAY ---
+    if st.session_state.mode == "AI_Assist":
+        prediction = "THREAT" if st.session_state.has_threat else "CLEAR"
+        
+        # 85% Reliability Check
+        if random.random() > 0.85:
+            prediction = "CLEAR" if prediction == "THREAT" else "THREAT"
+        
+        # Generate random confidence for realism
+        confidence = random.randint(80, 99)
+
+        if prediction == "THREAT":
+            st.error(f"🤖 AI ALERT: Threat Detected (Confidence: {confidence}%)", icon="⚠️")
+        else:
+            st.success(f"🤖 AI SCAN: Bag Clear (Confidence: {confidence}%)", icon="✅")
+            
+    else:
+        
+        # Manual Mode Control Condition
+        st.warning("📡 AI SYSTEM OFFLINE: Manual Inspection Required", icon="🛑")
+
+    # --- DECISION BUTTONS ---
+    st.write("") # Spacer
+    
+    if st.button("✅ CLEAR BAG", type="primary", use_container_width=True): 
+        process_decision(False)
+        st.rerun()
+        
+    if st.button("🚨 REPORT THREAT", use_container_width=True): 
+        process_decision(True)
+        st.rerun()
 
     # --- STACKED BIG BUTTONS (FIXED) ---
     st.write("") # Spacer
