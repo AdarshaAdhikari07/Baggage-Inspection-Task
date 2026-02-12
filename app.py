@@ -228,7 +228,7 @@ elif st.session_state.game_active:
         process_decision(False)
         st.rerun()
         
-    if st.button("🚨 REPORT THREAT", use_container_width=True): 
+    if st.button("🚨 REPORT THREAT",type="primary", use_container_width=True): 
         process_decision(True)
         st.rerun()
 
