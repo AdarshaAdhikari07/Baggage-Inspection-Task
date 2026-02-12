@@ -8,7 +8,7 @@ import seaborn as sns
 # ==========================================
 # 1. APP CONFIGURATION
 # ==========================================
-st.set_page_config(page_title="SecureScan Verification", page_icon="🛡️", layout="centered")
+st.set_page_config(page_title="Baggage Inspection Task", page_icon="", layout="centered")
 
 # ==========================================
 # 2. SESSION STATE MANAGEMENT
@@ -121,7 +121,7 @@ def run_system_verification():
 # ==========================================
 # 5. UI LAYOUT
 # ==========================================
-st.title("🛡️ SecureScan: Research Instrument")
+st.title(" Baggage Inspection Task")
 
 # --- MAIN MENU ---
 if not st.session_state.game_active and st.session_state.rounds == 0:
