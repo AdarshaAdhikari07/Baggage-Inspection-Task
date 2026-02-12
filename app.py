@@ -211,9 +211,9 @@ elif st.session_state.game_active:
         confidence = random.randint(80, 99)
 
         if prediction == "THREAT":
-            st.error(f"🤖 AI ALERT: Threat Detected (Confidence: {confidence}%)", icon="⚠️")
+            st.error(f"🤖 AI ALERT: Suspicious Object Detected (Confidence: {confidence}%)", icon="⚠️")
         else:
-            st.success(f"🤖 AI SCAN: Bag Clear (Confidence: {confidence}%)", icon="✅")
+            st.success(f"🤖 AI SCAN: No Suspicious Object Detected  (Confidence: {confidence}%)", icon="✅")
 
     c1, c2 = st.columns(2)
     if c1.button("✅ CLEAR"): 
