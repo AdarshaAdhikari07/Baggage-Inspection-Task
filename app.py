@@ -97,7 +97,7 @@ def run_system_verification():
 # ==========================================
 # 5. UI LAYOUT & GATEWAY LOGIC
 # ==========================================
-st.title("🔍 Baggage Inspection Task")
+st.title(" Baggage Inspection Task")
 
 # --- PHASE 1: INFORMED CONSENT ---
 if not st.session_state.consent_given:
