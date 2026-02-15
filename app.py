@@ -110,7 +110,7 @@ if not st.session_state.consent_given:
         **Purpose:** This study investigates 'Automation Bias' and the 'Cost of Verification' in human-AI teaming.
         **Procedure:** You will perform 10 baggage checks. One mode is Manual, the other uses an AI assistant (85% reliable).
         **Privacy:** No PII (names/IDs) is collected. 
-        **Data Submission:** You will download a CSV file at the end and email it to the researcher.
+        **Data Submission:** You will download a CSV file at the end and email it to the researcher.Data is logged to a structured .CSV file. Participants manually download this anonymous file and email it to the researcher. While the researcher sees the sender's email, the CSV itself is PII-free, containing no names or IDs. Emails are deleted immediately after moving the anonymous CSV to a secure, encrypted University OneDrive.
         **Withdrawal:** You may stop at any time by closing the browser.
         """)
     st.warning("By clicking 'I Consent' below, you confirm you are 18+ and agree to participate voluntarily.")
