@@ -261,7 +261,8 @@ else:
         
         st.divider()
         csv = df.to_csv(index=False).encode('utf-8')
-        st.download_button("📥 Download Full Dataset (CSV)", csv, "baggage inspection task.csv", "text/csv")
+
+st.download_button("📥 Download Dataset v1 (CSV)", csv, "baggage_inspection_task.csv", "text/csv")
     
     if st.button("🔄 Return to Main Menu"):
         restart_game()
