@@ -8,7 +8,7 @@ import seaborn as sns
 # ==========================================
 # 1. APP CONFIGURATION
 # ==========================================
-st.set_page_config(page_title="Baggage Inspection Task", page_icon="🔍", layout="centered")
+st.set_page_config(page_title="Baggage Inspection Task", page_icon="", layout="centered")
 
 # ==========================================
 # 2. SESSION STATE MANAGEMENT
