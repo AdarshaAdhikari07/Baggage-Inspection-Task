@@ -10,6 +10,26 @@ import seaborn as sns
 # ==========================================
 st.set_page_config(page_title="Baggage Inspection Task", page_icon="", layout="centered")
 
+# Custom CSS for Red Decision Buttons
+st.markdown("""
+    <style>
+    div.stButton > button {
+        background-color: #ff4b4b !important;
+        color: white !important;
+        border-radius: 10px;
+        border: none;
+        height: 3.5em;
+        width: 100%;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    div.stButton > button:hover {
+        background-color: #ff3333 !important;
+        border: 1px solid white;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
 # ==========================================
 # 2. SESSION STATE MANAGEMENT
 # ==========================================
