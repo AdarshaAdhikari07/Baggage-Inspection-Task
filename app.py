@@ -81,36 +81,36 @@ if not st.session_state.consent_given:
     
     with st.expander("READ FIRST: Participant Information Sheet", expanded=True):
         st.subheader("Human-in-the-Loop AI System")
-        st.write("**Researcher:** Adarsha Adhikari | **Supervisor:** Aram Saeed [cite: 96, 107]")
-        st.write("**Ethics Reference:** P192604 [cite: 121, 150]")
+        st.write("**Researcher:** Adarsha Adhikari | **Supervisor:** Aram Saeed ")
+        st.write("**Ethics Reference:** P192604 ")
         st.markdown(f"""
         **Purpose:** This research compares Manual and AI-Assisted modes to determine how "Automation Bias" and "Cost of Verification" affect screening tasks[cite: 118].
-        **What will I do?:** You will inspect 10 bags for threats (emojis) using an 85% reliable AI assistant[cite: 126, 128].
-        **Privacy:** No names, IP addresses, or student IDs are recorded[cite: 137]. 
-        **Data Submission:** You must download the anonymous CSV file and email it to **adhika108@coventry.ac.uk**[cite: 129, 148].
-        **Withdrawal:** You can withdraw at any time by closing your browser window[cite: 124, 146].
+        **What will I do?:** You will inspect 10 bags for threats (emojis) using an 85% reliable AI assistant.
+        **Privacy:** No names, IP addresses, or student IDs are recorded. 
+        **Data Submission:** You must download the anonymous CSV file and email it to **adhika108@coventry.ac.uk**.
+        **Withdrawal:** You can withdraw at any time by closing your browser window.
         """)
 
     st.subheader("✅ Informed Consent")
-    st.write("Please check each box to indicate your agreement[cite: 100]:")
-    c1 = st.checkbox("I confirm that I have read and understood the Participant Information Sheet and have had the opportunity to ask questions. [cite: 103]")
-    c2 = st.checkbox("I understand that all the information I provide will be held securely and treated confidentially. [cite: 103]")
-    c3 = st.checkbox("I understand my participation is voluntary and I am free to withdraw without giving a reason by closing my browser. [cite: 103]")
-    c4 = st.checkbox("I understand the results of this research will be used in academic papers and other formal research outputs. [cite: 103]")
-    c5 = st.checkbox("I agree to take part in the above research project and confirm I am 18+ years of age. [cite: 103, 131]")
+    st.write("Please check each box to indicate your agreement:")
+    c1 = st.checkbox("I confirm that I have read and understood the Participant Information Sheet and have had the opportunity to ask questions. ")
+    c2 = st.checkbox("I understand that all the information I provide will be held securely and treated confidentially. ")
+    c3 = st.checkbox("I understand my participation is voluntary and I am free to withdraw without giving a reason by closing my browser. ")
+    c4 = st.checkbox("I understand the results of this research will be used in academic papers and other formal research outputs. ")
+    c5 = st.checkbox("I agree to take part in the above research project and confirm I am 18+ years of age. ")
 
     if st.button("I Consent & Agree to Participate"):
         if all([c1, c2, c3, c4, c5]):
             st.session_state.consent_given = True
             st.rerun()
         else:
-            st.error("Please check all boxes to provide informed consent[cite: 100].")
+            st.error("Please check all boxes to provide informed consent.")
     st.stop()
 
 # --- PHASE 2: MAIN MENU ---
 if not st.session_state.game_active and st.session_state.rounds == 0:
     st.markdown("### 📋 Mission Briefing")
-    st.info("Identify potential threats in the luggage. Speed and accuracy are tracked[cite: 119, 134].")
+    st.info("Identify potential threats in the luggage. Speed and accuracy are tracked.")
     
     st.markdown("#### ⚠️ TARGET THREATS:")
     threat_html = " ".join([f"<span style='font-size:40px; margin:0 10px;'>{x}</span>" for x in THREAT_ITEMS])
