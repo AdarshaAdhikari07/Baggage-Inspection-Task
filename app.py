@@ -115,7 +115,7 @@ if not st.session_state.consent_given:
     c4 = st.checkbox("I understand the results will be used for academic research.")
     c5 = st.checkbox("I agree to take part and confirm I am 18+ years of age.")
 
-    if st.button("I Consent & Agree to Participate, icon="🛑"):
+    if st.button("I Consent & Agree to Participate"):
         if all([c1, c2, c3, c4, c5]):
             st.session_state.consent_given = True
             st.rerun()
