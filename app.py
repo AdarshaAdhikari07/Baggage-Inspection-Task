@@ -162,8 +162,8 @@ elif st.session_state.game_active:
         prediction = "THREAT" if st.session_state.has_threat else "CLEAR"
         if random.random() > 0.85: prediction = "CLEAR" if prediction == "THREAT" else "THREAT"
         confidence = random.randint(80, 99)
-        if prediction == "THREAT": st.error(f"🤖 AI ALERT: Threat Detected ({confidence}%)", icon="⚠️")
-        else: st.success(f"🤖 AI SCAN: Bag Clear ({confidence}%)", icon="✅")
+        if prediction == "THREAT": st.error(f"🤖 AI ALERT: Suspicious Object Detected ({confidence}%)", icon="⚠️")
+        else: st.success(f"🤖 AI SCAN: No Suspicious Object Detected ({confidence}%)", icon="✅")
     else:
         st.warning("📡 AI SYSTEM OFFLINE: Manual Inspection Required", icon="🛑")
 
