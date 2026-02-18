@@ -223,9 +223,10 @@ else:
         with tab3:
             st.dataframe(df, use_container_width=True)
         
-        st.error("⚠️ ACTION REQUIRED: DATA SUBMISSION")
-        st.write("1. Click the button below to download your results.")
-        st.write("2. Email the file to: **adhika108@coventry.ac.uk**")
+        st.error(" ACTION REQUIRED for Paticipant: Plz Go through both Manual Mode and AI Assisted Mode. After you complete the both mode. Plz submit the data  ")
+        st.error("Privacy: NO names and Ip addresses are recorded.")
+        st.write("1.Please Click the button below to download your results.")
+        st.write("2.Please Email the file to: **adhika108@coventry.ac.uk which will be use for study purpose . All the information are kept confidentially**")
         
         csv = df.to_csv(index=False).encode('utf-8')
         st.download_button("📥 Download Results (CSV)", csv, "baggage_results.csv", "text/csv")
