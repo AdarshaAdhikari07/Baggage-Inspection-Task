@@ -54,10 +54,10 @@ THREAT_ITEMS = ['🔫', '🔪', '💣', '🧨', '🩸', '☠️']
 # 4. CORE FUNCTIONS
 # ==========================================
 def generate_bag():
-    """Creates a unique bag with a 50% threat probability."""
+    """Creates a unique bag with a 40% threat probability."""
     items = random.sample(SAFE_ITEMS, k=random.randint(4, 8))
     threat = False
-    if random.random() < 0.50: 
+    if random.random() < 0.40: 
         items.append(random.choice(THREAT_ITEMS))
         threat = True
     random.shuffle(items)
@@ -97,7 +97,7 @@ def run_system_verification():
     logs = []
     progress_bar = st.progress(0)
     for i in range(10000):
-        is_threat = random.random() < 0.50
+        is_threat = random.random() < 0.40
         ai_advice = "THREAT" if is_threat else "CLEAR"
         is_ai_correct = True
         if random.random() > 0.85: # 85% Reliability Target
