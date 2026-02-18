@@ -1,5 +1,5 @@
 ========================================================================
-HUMAN-IN-THE-LOOP AI: AIRPORT SCREENING SIMULATION
+HUMAN-IN-THE-LOOP AI SYSTEM:  A Comparative Study Of Manual and AI-Assisted Airport  Screening
 ========================================================================
 
 1. PROJECT OVERVIEW
