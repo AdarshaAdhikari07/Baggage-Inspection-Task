@@ -121,7 +121,7 @@ if not st.session_state.consent_given:
     st.header("📄 Participant Information & Consent")
     with st.expander("READ FIRST: Participant Information Sheet", expanded=True):
         st.subheader("Human-in-the-Loop System : A Comparative Study Of Manual and AI-Assisted Security Screening")
-        st.write("**Researcher:** Adarsha Adhikari | **Supervisor:**Dr Mark Eslaw ")
+        st.write("**Researcher:** Adarsha Adhikari | **Supervisor:** Dr Mark Eslaw ")
         st.write("**** ")
         st.markdown(f"""
         **Purpose:** This research compares prototype of Manual and AI-Assisted modes for security screening to study "Automation Bias" .
