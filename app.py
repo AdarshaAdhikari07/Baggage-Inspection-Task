@@ -117,7 +117,7 @@ st.title(" Security Screening Task")
 if not st.session_state.consent_given:
     st.header("📄 Participant Information & Consent")
     with st.expander("READ FIRST: Participant Information Sheet", expanded=True):
-        st.subheader("Human-in-the-Loop AI System")
+        st.subheader("Human-in-the-Loop System A Comparative Study Of Manual and AI-Assisted Security Screening")
         st.write("**Researcher:** Adarsha Adhikari | **Supervisor:** ")
         st.write("**** ")
         st.markdown(f"""
