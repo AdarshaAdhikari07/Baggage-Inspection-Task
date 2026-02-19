@@ -152,7 +152,7 @@ if not st.session_state.game_active and st.session_state.rounds == 0:
     # Removed the second import statement from here
     st.info("""
     **Role:** Security Officer.
-    **Objective:** Detect prohibited items.
+    **Objective:** Detect prohibited threat items.
 
     **Important Notice:**
     * These are **artificially created symbolic images**, not real luggage X-rays.
