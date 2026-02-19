@@ -163,9 +163,8 @@ if not st.session_state.game_active and st.session_state.rounds == 0:
 
 
     
-   # --- Display Target Threats ---
+  # --- Display Target Threats ---
 st.markdown("#### ⚠️ TARGET THREATS (Prohibited):")
-# Using the non-scary threats Mark suggested
 threat_html = " ".join([f"<span style='font-size:40px; margin:0 10px;'>{x}</span>" for x in THREAT_ITEMS])
 st.markdown(f"<div style='background-color: #262730; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px;'>{threat_html}</div>", unsafe_allow_html=True)
 
@@ -174,9 +173,10 @@ st.markdown("#### ✅ SAFE ITEMS (Distractors):")
 safe_html = " ".join([f"<span style='font-size:35px; margin:0 8px;'>{x}</span>" for x in SAFE_ITEMS])
 st.markdown(f"<div style='background-color: #1E1E1E; padding: 15px; border-radius: 10px; text-align: center; margin-bottom: 20px; border: 1px solid #4CAF50;'>{safe_html}</div>", unsafe_allow_html=True)
 
-    col1, col2 = st.columns(2)
-    with col1:
-        st.success("👤 **Participant Mode**")
+
+col1, col2 = st.columns(2)
+with col1:
+    st.success("👤 **Participant Mode**")
         if st.button("Start Manual Mode", use_container_width=True):
             st.session_state.mode, st.session_state.game_active = "Manual", True
             generate_bag()
