@@ -121,10 +121,10 @@ if not st.session_state.consent_given:
     st.header("📄 Participant Information & Consent")
     with st.expander("READ FIRST: Participant Information Sheet", expanded=True):
         st.subheader("Human-in-the-Loop System : A Comparative Study Of Manual and AI-Assisted Security Screening")
-        st.write("**Researcher:** Adarsha Adhikari | **Supervisor:*Dr Mark Eslaw* ")
+        st.write("**Researcher:** Adarsha Adhikari | **Supervisor:**Dr Mark Eslaw ")
         st.write("**** ")
         st.markdown(f"""
-        **Purpose:** This research compares Manual and AI-Assisted modes to study "Automation Bias" and "Cost of Verification".
+        **Purpose:** This research compares prototype of Manual and AI-Assisted modes for security screening to study "Automation Bias" .
         **Procedure:** You have to detect threat item.You will inspect 10 bags each on two differents modes. One mode is Manual, the other is AI assistant.
         **Privacy:** No names, IP addresses,  are recorded.
         **Data Submission:** Download the anonymous CSV and email it to **adhika108@coventry.ac.uk**.
