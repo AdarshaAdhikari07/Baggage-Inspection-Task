@@ -149,7 +149,18 @@ if not st.session_state.consent_given:
 # --- PHASE 2: MAIN MENU ---
 if not st.session_state.game_active and st.session_state.rounds == 0:
     st.markdown("### 📋 Mission Briefing")
-    st.info("Role: Security Officer. Objective: Detect prohibited items.Important: These are artificially created symbolic images, not real luggage X-rays. Please examine the luggage and decide, based on your own judgment, whether it is safe or not."Please note that you are testing a prototype of an AI assistant. It is meant to identify potential threats. Please examine the luggage and decide, based on your own judgment, whether it is safe or not.")
+   import streamlit as st
+
+# Combined Instructional Block for Participants
+st.info("""
+**Role:** Security Officer.
+**Objective:** Detect prohibited items.
+
+**Important Notice:**
+* These are **artificially created symbolic images**, not real luggage X-rays.
+* You are testing a **prototype AI assistant** designed to identify potential threats.
+* Please examine the luggage and decide, based on your **own judgment**, whether it is safe or not.
+""")
     
     st.markdown("#### ⚠️ TARGET THREATS:")
     threat_html = " ".join([f"<span style='font-size:40px; margin:0 10px;'>{x}</span>" for x in THREAT_ITEMS])
