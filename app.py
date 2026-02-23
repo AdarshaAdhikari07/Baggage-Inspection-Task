@@ -248,7 +248,7 @@ else:
         st.error(" ACTION REQUIRED for Paticipant: Once you done with one mode either Manual or AI-Assisted click on the Return to Main Menu button which is situated down below.  After you complete the both mode. Plz submit the data  ")
         st.error("Privacy: NO names and Ip addresses are recorded.")
         st.write("1.Please Click the button below to download your results.")
-        st.write("2.Please Email the file to: **adhika108@coventry.ac.uk which will be use for study purpose . All the information are kept confidentially**")
+        st.write("2.Please Email the file to: **adhika108@coventry.ac.uk which will be use for study purpose . All the information are kept confidentially. Thank you for the participaion. Please download the csv file and send it to researcher.**")
         
         csv = df.to_csv(index=False).encode('utf-8')
         st.download_button("📥 Download Results (CSV)", csv, "baggage_results.csv", "text/csv")
